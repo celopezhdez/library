@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {KBPageSliderComponent}    from 'ng2-page-slider';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-landpage',
+  templateUrl: './landpage.component.html',
+  styleUrls: ['./landpage.component.scss']
 })
-export class AppComponent {
+export class LandpageComponent implements OnInit {
 
   pageNumber: number = 0;
   pageCount: number = 0;
@@ -20,5 +20,10 @@ export class AppComponent {
       title: "You can find whatever book you want"
     }
   ];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }

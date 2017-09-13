@@ -1,0 +1,86 @@
+{
+    "books": [{
+            "id": "1",
+            "name": "It",
+            "author": "Stephen King",
+            "category": "Horror",
+            "publishedDate": "2017",
+            "user": "Carlos"
+        },
+        {
+            "id": "2",
+            "name": "Frankenstein",
+            "author": "Mary Shelley",
+            "category": "Horror",
+            "publishedDate": "1818",
+            "user": ""
+        },
+        {
+            "id": "3",
+            "name": "Ender's Game",
+            "author": "Orson Scott Card",
+            "category": "Science Fiction",
+            "publishedDate": "1985",
+            "user": ""
+        },
+        {
+            "id": "4",
+            "name": "Neuromancer",
+            "author": "William Gibson",
+            "category": "Science Fiction",
+            "publishedDate": "1984",
+            "user": ""
+        },
+        {
+            "id": "5",
+            "name": "Catching Fire",
+            "author": "Suzanne Collins",
+            "category": "Drama",
+            "publishedDate": "2009",
+            "user": ""
+        },
+        {
+            "id": "6",
+            "name": "The Hunger Games",
+            "author": "Suzanne Collins",
+            "category": "Drama",
+            "publishedDate": "2008",
+            "user": ""
+        },
+        {
+            "id": "7",
+            "name": "Fifty Shades Of Gray",
+            "author": "E. L. James",
+            "category": "Romance",
+            "publishedDate": "2011",
+            "user": ""
+        },
+        {
+            "id": "8",
+            "name": "Outlander",
+            "author": "Diana Gabaldon",
+            "category": "Romance",
+            "publishedDate": "1991",
+            "user": ""
+        }
+    ],
+
+    "categories": [{
+            "name": "Horror",
+            "description": "Has the capacity to frighten, scare, disgust, or startle its readers or viewers."
+        },
+        {
+            "name": "Science Fiction",
+            "description": "For books which do not exist themselves."
+        },
+        {
+            "name": "Drama",
+            "description": "Shows us human beings at ther best, their worst, and everything in-between."
+        },
+        {
+            "name": "Romance",
+            "description": "Their primary focus on the relationship and romantic love between two people."
+        }
+    ]
+
+}

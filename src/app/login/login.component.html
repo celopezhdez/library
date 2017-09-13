@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" role="form" (submit)="login()">
+        <div class="form-group">
+            <md-form-field>
+                <input mdInput required type="text" formControlName="username" class="form-control" id="username" placeholder="Username">
+            </md-form-field>
+        </div>
+        <div class="form-group">
+            <md-form-field>
+                <input mdInput required type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+            </md-form-field>
+        </div>
+        <p *ngIf="!loginForm.valid">Type username and password first</p>
+        <button md-raised-button color="primary" [disabled]="!loginForm.valid" class="btn btn-default">Log In</button>
+        <button md-raised-button color="accent" (click)="goToLand()" class="btn btn-default">Go To LandPage</button>
+    </form>
+</div>

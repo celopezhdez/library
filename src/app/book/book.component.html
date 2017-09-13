@@ -1,0 +1,73 @@
+<div class="inline">
+    <h1 class="title">Library Manager System</h1>
+    <button (click)="logout()" md-raised-button color="primary" class="btn btn-default">Logout</button>
+</div>
+<p-dataTable [value]="lastBooks" [rows]="paginationSize">
+    <p-column [filter]="true" filterMatchMode="contains" [sortable]="true" field="id" header="ID"></p-column>
+    <p-column [filter]="true" filterMatchMode="contains" [sortable]="true" field="name" header="Name"></p-column>
+    <p-column [filter]="true" filterMatchMode="contains" [sortable]="true" field="author" header="Author"></p-column>
+    <p-column [filter]="true" filterMatchMode="contains" [sortable]="true" field="category" header="Category"></p-column>
+    <p-column [filter]="true" filterMatchMode="contains" [sortable]="true" field="user" header="User"></p-column>
+    <p-column header="Actions" [style]="{'width':'300px'}">
+        <ng-template let-data="rowData" pTemplate type="body">
+            <div class="inline">
+                <button (click)="setFields(data.id)" md-raised-button color="primary" class="btn btn-default">Edit</button>
+                <button (click)="delete(data.id)" md-raised-button color="warn" class="btn btn-default">Delete</button>
+                <button *ngIf="data.user != ''" (click)="openModal(data.id)" md-raised-button color="accent" class="btn btn-default">Deliver</button>
+            </div>
+        </ng-template>
+    </p-column>
+</p-dataTable>
+<p-paginator rows="{{paginationSize}}" totalRecords="{{books.length}}" (onPageChange)="paginate($event)"></p-paginator>
+<div id="form-section" class="container">
+    <form [formGroup]="bookForm" role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <md-form-field>
+                        <input mdInput required type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+                    </md-form-field>
+                </div>
+                <div class="form-group">
+                    <md-form-field>
+                        <input mdInput required type="text" formControlName="author" class="form-control" id="author" placeholder="Author">
+                    </md-form-field>
+                </div>
+                <div class="form-group">
+                    <md-form-field class="example-full-width">
+                        <input type="text" placeholder="Select One" aria-label="Category" mdInput formControlName="category" [mdAutocomplete]="auto">
+                        <md-autocomplete #auto="mdAutocomplete">
+                            <md-option *ngFor="let category of categories" [value]="category.name">
+                                {{ category.name }}
+                            </md-option>
+                        </md-autocomplete>
+                    </md-form-field>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <md-form-field>
+                        <input mdInput required type="number" formControlName="publishedDate" class="form-control" id="publishedDate" placeholder="Published Date">
+                    </md-form-field>
+                </div>
+                <div class="form-group">
+                    <md-form-field>
+                        <input mdInput type="text" formControlName="user" class="form-control" id="user" placeholder="User">
+                    </md-form-field>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="inline options">
+        <button (click)="create()" [disabled]="(!bookForm.valid)" md-raised-button color="primary" class="btn btn-default">Save</button>
+    </div>
+
+</div>
+<p-dialog header="Do you want to deliver it?" [(visible)]="display" modal="modal" width="300" [responsive]="true">
+    <div class="inline options">
+        <button (click)="deliver()" md-raised-button color="accent" class="btn btn-default">Yes</button>
+        <button (click)="display=false" md-raised-button color="warn" class="btn btn-default">No</button>
+    </div>
+
+</p-dialog>

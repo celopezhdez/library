@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mat-form-field-underline {
+    background-color: black;
+}
+
+.btn.btn-default {
+    margin: 20px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .btn {
+        margin: 0px;
+    }
+}
+
+.options {
+    width: 250px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.mat-fab.mat-accent[disabled],
+.mat-fab.mat-primary[disabled],
+.mat-fab.mat-warn[disabled],
+.mat-fab[disabled][disabled],
+.mat-mini-fab.mat-accent[disabled],
+.mat-mini-fab.mat-primary[disabled],
+.mat-mini-fab.mat-warn[disabled],
+.mat-mini-fab[disabled][disabled],
+.mat-raised-button.mat-accent[disabled],
+.mat-raised-button.mat-primary[disabled],
+.mat-raised-button.mat-warn[disabled],
+.mat-raised-button[disabled][disabled] {
+    background-color: #000;
+}
+
+::ng-deep snack-bar-container.custom-snack {
+    background: lightgray;
+}
+
+::ng-deep .custom-snack .mat-simple-snackbar {
+    color: green;
+}

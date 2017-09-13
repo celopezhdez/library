@@ -1,0 +1,54 @@
+<div id="menu" class="row">
+    <div class="col-md-6 col-sm-6">
+        <a href="#"><img src="https://i.pinimg.com/736x/0a/cd/50/0acd5002683fbcf2b720004f201ee530.jpg" alt="The Library" height="50" width="120"></a>
+    </div>
+    <div class="col-md-6 col-sm-6 right-align">
+        <a href="https://google.com">To Google</a> &nbsp; &nbsp; &nbsp;
+        <a id="goToFooter" href="#footer">To System</a>
+    </div>
+</div>
+
+<kb-page-slider [overlayIndicator]="false" dotColor="black" [(page)]="pageNumber" (pageCountChange)="pageCount = $event">
+
+    <!-- Pages -->
+    <div *kbPages="let page of pages" class="hero-banner" [style.background-image]="'url('+page.image+')'">
+        <div class="pageTitle">{{page.title}}</div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <kb-nav-button backward [showBackground]="true" [(page)]="pageNumber" [pageCount]="pageCount">
+    </kb-nav-button>
+
+    <kb-nav-button forward [showBackground]="true" [(page)]="pageNumber" [pageCount]="pageCount">
+    </kb-nav-button>
+
+</kb-page-slider>
+
+<div id="main-content" class="row center-align">
+    <div class="col-md-6 col-sm-6">
+        <h1>This content is about the Library</h1>
+        <p class="description">A library is a collection of sources of information and similar resources, made accessible to a defined community for reference or borrowing.[1] It provides physical or digital access to material, and may be a physical building or room, or a virtual
+            space, or both.[2] A library's collection can include books, periodicals, newspapers, manuscripts, films, maps, prints, documents, microform, CDs, cassettes, videotapes, DVDs, Blu-ray Discs, e-books, audiobooks, databases, and other formats.
+            Libraries range in size from a few shelves of books to several million items. In Latin and Greek, the idea of a bookcase is represented by Bibliotheca and Bibliothēkē (Greek: βιβλιοθήκη): derivatives of these mean library in many modern languages,
+            e.g. French bibliothèque.</p>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <img src="http://cohoctonlibrary.org/wp-content/uploads/2014/06/full-bookcase-of-books.jpeg" width="500" height="300" alt="The Library">
+    </div>
+</div>
+
+<div id="footer" class="row center-align">
+    <div class="col-md-4 col-sm-4">
+        <a href="#"><img src="https://i.pinimg.com/736x/0a/cd/50/0acd5002683fbcf2b720004f201ee530.jpg" alt="The Library" height="120" width="250"></a>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <a href="login" (click)="goToSystem()">
+            <h3>Go To Library System</h3>
+        </a>
+    </div>
+    <div id="social-network" class="col-md-4 col-sm-4">
+        <a href="http://facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Facebook_icon.jpg" alt="Facebook" height="50" width="50"></a>
+        <a href="http://twitter.com"><img src="https://www.logobee.com/uploads/twitter-icon.jpg " alt="Facebook " height="50 " width="50 "></a>
+        <a href="http://instagram.com"><img src="http://www.miaonline.org/wp-content/uploads/instagram_PNG10.png" alt="Facebook" height="50" width="50"></a>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada y de usuario.
+{
+    "search.exclude": {
+        "**/node_modules": false,
+        "**/bower_components": true
+    }
+}
